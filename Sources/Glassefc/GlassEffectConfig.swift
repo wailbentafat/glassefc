@@ -6,7 +6,7 @@
 
 enum GlassEffectConfig {
     static let isUnlocked   = false
-    static let freelancer   = "Your Name"
-    static let project      = "Project Name"
-    static let amount       = "000 USD"
+    static let freelancer   = "Wail Bentafat"
+    static let project      = "Wajed"
+    static let amount       = "82,500 DZD"
 }
