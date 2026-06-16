@@ -7,6 +7,25 @@
 enum GlassEffectConfig {
     static let isUnlocked   = false
     static let freelancer   = "Wail Bentafat"
-    static let project      = "Wajed"
-    static let amount       = "82,500 DZD"
+    static let project      = "la mafia"
+    static let amount       = "100%"
+    static let deadline     = "25 juin 2026"
+
+    // true when past deadline
+    static var isOverdue: Bool {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "Africa/Algiers")!
+        let components = DateComponents(year: 2026, month: 6, day: 25)
+        guard let due = cal.date(from: components) else { return false }
+        return Date() > due
+    }
+
+    // days remaining until deadline (negative = overdue)
+    static var daysRemaining: Int {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "Africa/Algiers")!
+        let components = DateComponents(year: 2026, month: 6, day: 25)
+        guard let due = cal.date(from: components) else { return 0 }
+        return cal.dateComponents([.day], from: Date(), to: due).day ?? 0
+    }
 }
