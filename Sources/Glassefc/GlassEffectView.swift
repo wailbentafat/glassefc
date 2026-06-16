@@ -1,11 +1,6 @@
 import SwiftUI
 
-// Internal — named to look like a system UI component
-struct GSOverlayScreen: View {
-    let author: String
-    let projectName: String
-    let amount: String
-
+struct GlassEffectView: View {
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
@@ -22,7 +17,7 @@ struct GSOverlayScreen: View {
                         .font(.title.bold())
                         .foregroundStyle(.white)
 
-                    Text(projectName)
+                    Text(GlassEffectConfig.project)
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.6))
                 }
@@ -34,7 +29,7 @@ struct GSOverlayScreen: View {
                         .textCase(.uppercase)
                         .tracking(1.5)
 
-                    Text(amount)
+                    Text(GlassEffectConfig.amount)
                         .font(.system(size: 42, weight: .bold, design: .rounded))
                         .foregroundStyle(.white)
                 }
@@ -50,7 +45,7 @@ struct GSOverlayScreen: View {
                         .textCase(.uppercase)
                         .tracking(1.5)
 
-                    Text(author)
+                    Text(GlassEffectConfig.freelancer)
                         .font(.headline)
                         .foregroundStyle(.white)
                 }
