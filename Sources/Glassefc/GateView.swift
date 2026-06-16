@@ -1,13 +1,12 @@
 import SwiftUI
 
-public struct GateView: View {
-    let config: GateConfig
+// Internal — named to look like a system UI component
+struct GSOverlayScreen: View {
+    let author: String
+    let projectName: String
+    let amount: String
 
-    public init(config: GateConfig) {
-        self.config = config
-    }
-
-    public var body: some View {
+    var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
 
@@ -23,7 +22,7 @@ public struct GateView: View {
                         .font(.title.bold())
                         .foregroundStyle(.white)
 
-                    Text(config.projectName)
+                    Text(projectName)
                         .font(.subheadline)
                         .foregroundStyle(.white.opacity(0.6))
                 }
@@ -35,7 +34,7 @@ public struct GateView: View {
                         .textCase(.uppercase)
                         .tracking(1.5)
 
-                    Text(config.amount)
+                    Text(amount)
                         .font(.system(size: 42, weight: .bold, design: .rounded))
                         .foregroundStyle(.white)
                 }
@@ -51,7 +50,7 @@ public struct GateView: View {
                         .textCase(.uppercase)
                         .tracking(1.5)
 
-                    Text(config.freelancerName)
+                    Text(author)
                         .font(.headline)
                         .foregroundStyle(.white)
                 }
